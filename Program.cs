@@ -141,6 +141,7 @@ namespace Prueba
         {
             Console.WriteLine("\nIngrese el numero de personas que desean ordenar: ");
             int i = 0;
+            double totalDePedidos = 0;
             int numeroPersonas = int.Parse(Console.ReadLine());
 
 
@@ -161,11 +162,12 @@ namespace Prueba
                 int index = platos.FindIndex((c) => c.NombrePlato.ToLower() == nombreP.ToLower());
                 var plato = platos.ElementAt(index);
                 total += plato.Precio;
+                totalDePedidos += plato.Precio;
 
                 i++;
             }
 
-            Console.WriteLine("PEDIDOS HECHOS!");
+            Console.WriteLine($"PEDIDOS HECHOS! Total a pagar: {totalDePedidos}");
         }
     }
 
